@@ -1,0 +1,34 @@
+<ul>
+  <li>Name : {{name}}</li>
+  <li>Age : {{age}}</li>
+  <li>Email : {{email}}</li>
+  <li>street : {{address.street}}</li>
+  <li>city : {{address.city}}</li>
+  <li>province : {{address.province}}</li>
+  <li>postcode : {{address.postcode}}</li>
+
+</ul>
+<h2>Edit Profile</h2>
+<form action="">
+
+</form>
+<h1>Skill</h1>
+<form (submit)="addSkill(skill.value)">
+  <label for="skill">skill</label>
+  <input type="text" #skill placeholder="add your skill">
+</form>
+<ul>
+  <li style="list-style-type: none" *ngFor="let skill of skills;let i = index;">
+    {{i+1}}. {{skill}} <button (click)="removeSkill(skill)">X</button>
+  </li>
+</ul>
+
+
+<!-- 
+private address:{
+    street : string,
+    city : string,
+    province : string,
+    postcode:string
+  }
+  private skill:string[]; -->
