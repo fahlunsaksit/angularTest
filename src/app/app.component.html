@@ -1,3 +1,8 @@
-<h1>hello {{ name }}</h1>
+<!-- <app-user></app-user> -->
 
-<app-user></app-user>
+<nav>
+    <a [routerLink]="['']" >User</a> | 
+    <a [routerLink]="['/aboutUs']">AbouteUs</a>
+</nav>
+<router-outlet></router-outlet>
+

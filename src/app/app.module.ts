@@ -6,19 +6,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './component/user/user.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
+import { TodoService } from "./service/todo.service";
+import { HttpModule } from "@angular/http";
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AboutusComponent
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: UserComponent },
+      { path: 'aboutUs', component: AboutusComponent },
+    ])
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

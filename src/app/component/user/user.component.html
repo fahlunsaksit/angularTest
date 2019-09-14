@@ -9,7 +9,11 @@
 
 </ul>
 <h2>Edit Profile</h2>
-<form action="">
+<button (click)="toggleEdit()">Edit</button>
+<br>
+<br>
+<div *ngIf="isEditable == true">
+  <form action="">
     <label for="name">Name : </label>
     <input type="text" [(ngModel)]="name" name="name" id="name">
     <br><br>
@@ -18,7 +22,8 @@
     <br><br>
     <label for="email">Email : </label>
     <input type="text" [(ngModel)]="email" name="email" id="email">
-</form>
+  </form>
+</div>
 <h1>Skill</h1>
 <form (submit)="addSkill(skill.value)">
   <label for="skill">skill</label>
@@ -28,6 +33,10 @@
   <li style="list-style-type: none" *ngFor="let skill of skills;let i = index;">
     {{i+1}}. {{skill}} <button (click)="removeSkill(skill)">X</button>
   </li>
+</ul>
+<h2>Todo List</h2>
+<ul>
+  <li *ngFor="let todo of todoList;" style="list-style-type: none"><b>{{todo.id}}.</b>{{todo.title}}</li>
 </ul>
 
 
